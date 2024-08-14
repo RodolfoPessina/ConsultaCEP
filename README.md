@@ -1,77 +1,55 @@
 # Big Game Survey 
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/devsuperior/sds1-wmazoni/blob/master/LICENSE) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/RodolfoPessina/ConsultaCEP/blob/main/LICENSE) 
 
 # Sobre o projeto
+Consulta e Armazenamento de Endereço a partir de um CEP
 
-https://wmazoni-sds1.netlify.app
+Este projeto tem como objetivo implementar uma aplicação que consulta um endereço a partir de um CEP e salva as informações em um arquivo JSON.
 
-Big Game Survey é uma aplicação full stack web e mobile construída durante a 1ª edição da **Semana DevSuperior** (#sds1), evento organizado pela [DevSuperior](https://devsuperior.com "Site da DevSuperior").
+Uma classe para representar um endereço:
 
-A aplicação consiste em uma pesquisa de preferência de games, onde os dados são coletados no app mobile, e depois são listados no app web, que também apresenta um dashboard com gráficos baseados nestes dados.
+A classe Endereco contem os seguintes atributos:
 
-## Layout mobile
-![Mobile 1](https://github.com/acenelio/assets/raw/main/sds1/mobile1.png) ![Mobile 2](https://github.com/acenelio/assets/raw/main/sds1/mobile2.png)
+•cep
 
-## Layout web
-![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
+•uf
 
-![Web 2](https://github.com/acenelio/assets/raw/main/sds1/web2.png)
+•cidade
 
-## Modelo conceitual
-![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
+•bairro
+
+•logradouro
+
+•complemento
+
+A classe ConsultaCep realiza uma consulta à API ViaCEP para buscar informações de um endereço com base no CEP fornecido. A URL da API é: https://viacep.com.br/ws/{cep}/json.
+
+A classe ArquivoJson deve criar e salvar um arquivo JSON contendo os dados do objeto Endereco.
+
+O nome do arquivo deve ser o CEP informado (por exemplo, 04101300.json).
+
+A classe Main deve solicitar ao usuário que informe um CEP.
+
+as classes anteriores são utilizadas para consultar a API ViaCEP e salvar os dados do endereço em um arquivo JSON.
 
 # Tecnologias utilizadas
 ## Back end
 - Java
-- Spring Boot
-- JPA / Hibernate
-- Maven
-## Front end
-- HTML / CSS / JS / TypeScript
-- ReactJS
-- React Native
-- Apex Charts
-- Expo
-## Implantação em produção
-- Back end: Heroku
-- Front end web: Netlify
-- Banco de dados: Postgresql
 
-# Como executar o projeto
+# Instruções para Execução
+## Pré-requisitos:
 
-## Back end
-Pré-requisitos: Java 11
+Java 8 ou superior
 
-```bash
-# clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
+Biblioteca Gson (adicione a dependência no seu projeto)
 
-# entrar na pasta do projeto back end
-cd backend
+Compilação e Execução:
 
-# executar o projeto
-./mvnw spring-boot:run
-```
-
-## Front end web
-Pré-requisitos: npm / yarn
-
-```bash
-# clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
-
-# entrar na pasta do projeto front end web
-cd front-web
-
-# instalar dependências
-yarn install
-
-# executar o projeto
-yarn start
-```
+Compile as classes Java.
+Execute a classe Main.
 
 # Autor
 
-Wellington Mazoni de Andrade
+Rodolfo Pessina
 
-https://www.linkedin.com/in/wmazoni
+
