@@ -1,4 +1,4 @@
-# Big Game Survey 
+# Consulta CEP
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/RodolfoPessina/ConsultaCEP/blob/main/LICENSE) 
 
 # Sobre o projeto
