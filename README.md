@@ -1,73 +1,53 @@
-# ScreenMatch
+# Consulta CEP
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/RodolfoPessina/ConsultaCEP/blob/main/LICENSE) 
 
 # Sobre o projeto
-Screenmatch é uma aplicação Java que consulta e processa informações sobre séries de TV e seus episódios utilizando a API OMDb. O projeto utiliza Spring Boot para facilitar a execução e gerenciamento da aplicação e Jackson para manipulação de JSON.
+Consulta e Armazenamento de Endereço a partir de um CEP
 
-Funcionalidades
+Este projeto tem como objetivo implementar uma aplicação que consulta um endereço a partir de um CEP e salva as informações em um arquivo JSON.
 
-Busca de Série: Permite buscar informações detalhadas sobre uma série de TV a partir do nome fornecido.
+Uma classe para representar um endereço:
 
-Listagem dos 10 Melhores Episódios: Classifica e exibe os 10 episódios mais bem avaliados.
+A classe Endereco contem os seguintes atributos:
 
-Busca por Título de Episódio: Permite procurar um episódio específico com base em um trecho do título.
+•cep
 
-Análise de Avaliações: Calcula e exibe a média das avaliações por temporada, além de informações estatísticas sobre os episódios.
+•uf
 
+•cidade
 
-# Sobre o Projeto
-Screenmatch é uma aplicação Java que consulta e processa informações sobre séries de TV e seus episódios utilizando a API OMDb.
+•bairro
 
-O projeto utiliza Spring Boot para facilitar a execução e gerenciamento da aplicação e Jackson para manipulação de JSON.
+•logradouro
 
-# Funcionalidades
-Busca de Série: Permite buscar informações detalhadas sobre uma série de TV a partir do nome fornecido.
+•complemento
 
-Listagem dos 10 Melhores Episódios: Classifica e exibe os 10 episódios mais bem avaliados.
+A classe ConsultaCep realiza uma consulta à API ViaCEP para buscar informações de um endereço com base no CEP fornecido. A URL da API é: https://viacep.com.br/ws/{cep}/json.
 
-Busca por Título de Episódio: Permite procurar um episódio específico com base em um trecho do título.
+A classe ArquivoJson deve criar e salvar um arquivo JSON contendo os dados do objeto Endereco.
 
-Análise de Avaliações: Calcula e exibe a média das avaliações por temporada, além de informações estatísticas sobre os episódios.
+O nome do arquivo deve ser o CEP informado (por exemplo, 04101300.json).
 
-# Estrutura do Projeto
+A classe Main deve solicitar ao usuário que informe um CEP.
 
-• Pacotes e Classes:
-
-• br.com.rodolfopessina.Screenmatch.model:
-
-
-DadosEpisodio: Representa os dados de um episódio, incluindo título, número, avaliação e data de lançamento.
-
-DadosSerie: Representa os dados de uma série, incluindo título, número total de temporadas e avaliação.
-
-DadosTemporada: Representa uma temporada da série, incluindo o número da temporada e uma lista de episódios.
-
-Episodio: Classe que transforma DadosEpisodio em um formato mais utilizável para cálculos e manipulações.
-
-
-• br.com.rodolfopessina.Screenmatch.service:
-
-ConsumoApi: Classe responsável por fazer chamadas HTTP para a API OMDb e obter dados em formato JSON.
-
-ConvertDados: Classe para converter JSON em objetos Java usando a biblioteca Jackson.
-
-IConvertDados: Interface para a conversão de dados.
-
-• br.com.rodolfopessina.Screenmatch:
-
-Principal: Classe principal que executa a aplicação, exibe um menu para o usuário e processa a entrada.
-ScreenmatchApplication: Classe principal do Spring Boot que inicializa a aplicação.
+as classes anteriores são utilizadas para consultar a API ViaCEP e salvar os dados do endereço em um arquivo JSON.
 
 # Tecnologias utilizadas
 ## Back end
-- Java: Linguagem de programação usada para desenvolver a aplicação.
-- Spring Boot: Framework para criar aplicações Java.
-- Jackson: Biblioteca para processamento de JSON.
+- Java
 
 # Instruções para Execução
 ## Pré-requisitos:
 
-- Java 11 ou superior: Certifique-se de ter o JDK 11 ou superior instalado.
-- Maven: Para compilar e executar a aplicação.
+Java 8 ou superior
 
+Biblioteca Gson (adicione a dependência no seu projeto)
 
+Compilação e Execução:
 
+Compile as classes Java.
+Execute a classe Main.
+
+# Autor
+
+Rodolfo Pessina
